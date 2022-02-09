@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import {ref, onMounted} from 'vue'
 
 defineProps({
   msg: String
@@ -11,11 +11,20 @@ onMounted(() => {
     counter.value++;
   }, 1000)
 });
+
+const message = ref('이 페이지를 다음 시간에 열었습니다. ' + new Date().toLocaleString())
+
 </script>
 
 <template>
   <div id="counter">
     Counter: {{ counter }}
+  </div>
+
+  <div id="bind-attribute">
+  <span v-bind:title="message">
+    여기에 마우스를 올려두고 잠시 기다리면 제목이 동적으로 바뀝니다!
+  </span>
   </div>
 </template>
 

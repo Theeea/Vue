@@ -9,7 +9,7 @@ const counter = ref(0)
 onMounted(() => {
   setInterval(() => {
     counter.value++;
-  }, 10000)
+  }, 1000)
 });
 </script>
 

@@ -19,6 +19,10 @@ function reverseMessage() {
   input_message.value = input_message.value.split('').reverse().join('')
 }
 const is_true = ref(true)
+const todos = ref([
+    {text: 'Learn JavaScript'},
+    {text: 'Learn Vue'},
+    {text: 'Build something awesome'}])
 </script>
 
 <template>
@@ -45,10 +49,35 @@ const is_true = ref(true)
   <div id="conditional-rendering">
     <span v-if="is_true">이제 나를 볼수 있어요</span>
   </div>
+
+  <div id="list-rendering" class="demo">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
 </template>
 
 <style scoped>
 a {
   color: #42b983;
 }
+.demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+
+.demo li {
+  width: 300px;
+  margin: 0px;
+  padding: 0px;
+}
+
 </style>

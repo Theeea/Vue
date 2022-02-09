@@ -18,7 +18,7 @@ const two_way_binding = ref('asdf')
 function reverseMessage() {
   input_message.value = input_message.value.split('').reverse().join('')
 }
-
+const is_true = ref(true)
 </script>
 
 <template>
@@ -40,6 +40,10 @@ function reverseMessage() {
   <div id="two-way-binding">
     <p>{{ two_way_binding }}</p>
     <input v-model="two_way_binding" />
+  </div>
+
+  <div id="conditional-rendering">
+    <span v-if="is_true">이제 나를 볼수 있어요</span>
   </div>
 </template>
 

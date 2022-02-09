@@ -13,6 +13,11 @@ onMounted(() => {
 });
 
 const message = ref('이 페이지를 다음 시간에 열었습니다. ' + new Date().toLocaleString())
+var input_message = ref('Hello Vue.js!')
+
+function reverseMessage() {
+  input_message.value = input_message.value.split('').reverse().join('')
+}
 
 </script>
 
@@ -22,9 +27,14 @@ const message = ref('이 페이지를 다음 시간에 열었습니다. ' + new 
   </div>
 
   <div id="bind-attribute">
-  <span v-bind:title="message">
-    여기에 마우스를 올려두고 잠시 기다리면 제목이 동적으로 바뀝니다!
-  </span>
+    <span v-bind:title="message">
+      여기에 마우스를 올려두고 잠시 기다리면 제목이 동적으로 바뀝니다!
+    </span>
+  </div>
+
+  <div id="event-handling">
+    <p>{{ input_message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
   </div>
 </template>
 

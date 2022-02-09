@@ -13,8 +13,8 @@ onMounted(() => {
 });
 
 const message = ref('이 페이지를 다음 시간에 열었습니다. ' + new Date().toLocaleString())
-var input_message = ref('Hello Vue.js!')
-
+const input_message = ref('Hello Vue.js!')
+const two_way_binding = ref('asdf')
 function reverseMessage() {
   input_message.value = input_message.value.split('').reverse().join('')
 }
@@ -35,6 +35,11 @@ function reverseMessage() {
   <div id="event-handling">
     <p>{{ input_message }}</p>
     <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <div id="two-way-binding">
+    <p>{{ two_way_binding }}</p>
+    <input v-model="two_way_binding" />
   </div>
 </template>
 

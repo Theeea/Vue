@@ -75,7 +75,7 @@ a {
 }
 
 .demo li {
-  width: 300px;
+  width: 333px;
   margin: 0px;
   padding: 0px;
 }

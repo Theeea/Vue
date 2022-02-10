@@ -18,11 +18,11 @@ const groceryList = ref([
       여기에서 "key"를 또 전달하고 있는데
       이것에 대해서는 나중에 설명하겠습니다.
     -->
-    <todo-item
+    <TodoItem
         v-for="item in groceryList"
         v-bind:todo="item"
         v-bind:key="item.id"
-    ></todo-item>
+    ></TodoItem>
   </ol>
 </template>
 

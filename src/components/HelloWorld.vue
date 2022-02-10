@@ -1,5 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue'
+import TodoList from './TodoList.vue'
 
 defineProps({
   msg: String
@@ -69,6 +70,9 @@ const todos = ref([
       </li>
     </ol>
   </div>
+  <TodoList>
+
+  </TodoList>
 </template>
 
 <style scoped>

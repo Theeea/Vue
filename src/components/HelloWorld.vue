@@ -19,6 +19,17 @@ function reverseMessage() {
   input_message.value = input_message.value.split('').reverse().join('')
 }
 const is_true = ref(true)
+const btn_message = ref('숨기기')
+function changeStatus() {
+  if (is_true.value === true) {
+    btn_message.value = '표시하기'
+    is_true.value = false
+  }
+  else {
+    btn_message.value = '숨기기'
+    is_true.value = true
+  }
+}
 const todos = ref([
     {text: 'Learn JavaScript'},
     {text: 'Learn Vue'},
@@ -47,7 +58,8 @@ const todos = ref([
   </div>
 
   <div id="conditional-rendering">
-    <span v-if="is_true">이제 나를 볼수 있어요</span>
+    <span v-if="is_true">이제 나를 볼수 있어요</span><br>
+    <button class="button" v-on:click="changeStatus">{{btn_message}}</button>
   </div>
 
   <div id="list-rendering" class="demo">
@@ -80,4 +92,7 @@ a {
   padding: 0px;
 }
 
+.button {
+  width: 123px;
+}
 </style>

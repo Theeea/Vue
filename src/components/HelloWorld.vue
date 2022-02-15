@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted, computed} from 'vue'
 import TodoList from './TodoList.vue'
+import ComputedAndWatch from "./ComputedAndWatch.vue";
 
 defineProps({
   msg: String
@@ -93,6 +94,11 @@ const isPublished = computed({
     <span>출판된 책: </span>
     <span>{{ isPublished }}</span>
   </div>
+
+  <button v-on:click="changeActiveComponent">ComputedAndWatch</button>
+  <ComputedAndWatch>
+
+  </ComputedAndWatch>
 </template>
 
 <style scoped>

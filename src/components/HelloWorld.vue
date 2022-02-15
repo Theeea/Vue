@@ -1,5 +1,5 @@
 <script setup>
-import {ref, onMounted} from 'vue'
+import {ref, onMounted, computed} from 'vue'
 import TodoList from './TodoList.vue'
 
 defineProps({
@@ -35,6 +35,21 @@ const todos = ref([
     {text: 'Learn JavaScript'},
     {text: 'Learn Vue'},
     {text: 'Build something awesome'}])
+
+const author = ref([
+  {
+    name: '존 도우',
+    books: [
+      'Vue 2 - Advanced Guide',
+      'Vue 3 - Basic Guide',
+      'Vue 4 - The Mystery'
+    ]
+  }
+])
+
+const isPublished = computed({
+  get: () => author.value[0].books.length > 0 ? '있음' : '없음',
+})
 </script>
 
 <template>
@@ -73,6 +88,11 @@ const todos = ref([
   <TodoList>
 
   </TodoList>
+
+  <div id="computed-basics">
+    <span>출판된 책: </span>
+    <span>{{ isPublished }}</span>
+  </div>
 </template>
 
 <style scoped>

@@ -2,6 +2,7 @@
 import {ref, onMounted, computed} from 'vue'
 import TodoList from './TodoList.vue'
 import ComputedAndWatch from "./ComputedAndWatch.vue";
+import StyleClass from "./StyleClass.vue";
 
 defineProps({
   msg: String
@@ -108,6 +109,11 @@ const classObject = computed(() => ({
   </ComputedAndWatch>
 
   <div :class="classObject">asdf</div>
+
+  <button v-on:click="changeActiveComponent">StyleClass</button>
+  <StyleClass>
+
+  </StyleClass>
 </template>
 
 <style scoped>
@@ -133,5 +139,9 @@ a {
 
 .button {
   width: 123px;
+}
+
+.text-danger {
+  color: red;
 }
 </style>

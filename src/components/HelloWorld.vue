@@ -3,7 +3,8 @@ import {ref, onMounted, computed} from 'vue'
 import TodoList from './TodoList.vue'
 import ComputedAndWatch from "./ComputedAndWatch.vue";
 import StyleClass from "./StyleClass.vue";
-import VifCondition from "./VifCondition.vue"
+import VifCondition from "./VifCondition.vue";
+import ListRendering from "./ListRendering.vue";
 
 defineProps({
   msg: String
@@ -119,6 +120,10 @@ const classObject = computed(() => ({
   <VifCondition>
 
   </VifCondition>
+
+  <ListRendering>
+
+  </ListRendering>
 </template>
 
 <style scoped>

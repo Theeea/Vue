@@ -51,6 +51,13 @@ const author = ref([
 const isPublished = computed({
   get: () => author.value[0].books.length > 0 ? '있음' : '없음',
 })
+
+const isActive = ref(true)
+const test = ref(true)
+const error = ref(null)
+const classObject = computed(() => ({
+  active: isActive.value, test: test.value, 'text-danger': error.value
+}))
 </script>
 
 <template>
@@ -99,6 +106,8 @@ const isPublished = computed({
   <ComputedAndWatch>
 
   </ComputedAndWatch>
+
+  <div :class="classObject">asdf</div>
 </template>
 
 <style scoped>

@@ -3,6 +3,7 @@ import {ref, onMounted, computed} from 'vue'
 import TodoList from './TodoList.vue'
 import ComputedAndWatch from "./ComputedAndWatch.vue";
 import StyleClass from "./StyleClass.vue";
+import VifCondition from "./VifCondition.vue"
 
 defineProps({
   msg: String
@@ -114,6 +115,10 @@ const classObject = computed(() => ({
   <StyleClass>
 
   </StyleClass>
+
+  <VifCondition>
+
+  </VifCondition>
 </template>
 
 <style scoped>

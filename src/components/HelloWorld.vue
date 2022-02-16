@@ -5,6 +5,7 @@ import ComputedAndWatch from "./ComputedAndWatch.vue";
 import StyleClass from "./StyleClass.vue";
 import VifCondition from "./VifCondition.vue";
 import ListRendering from "./ListRendering.vue";
+import EventListner from "./EventListner.vue";
 
 defineProps({
   msg: String
@@ -124,6 +125,10 @@ const classObject = computed(() => ({
   <ListRendering>
 
   </ListRendering>
+
+  <EventListner>
+
+  </EventListner>
 </template>
 
 <style scoped>

@@ -6,6 +6,7 @@ import StyleClass from "./StyleClass.vue";
 import VifCondition from "./VifCondition.vue";
 import ListRendering from "./ListRendering.vue";
 import EventListner from "./EventListner.vue";
+import FormBinding from "./FormBinding.vue";
 
 defineProps({
   msg: String
@@ -129,6 +130,13 @@ const classObject = computed(() => ({
   <EventListner>
 
   </EventListner>
+
+  <p>
+    폼 바인딩
+  </p>
+  <FormBinding>
+
+  </FormBinding>
 </template>
 
 <style scoped>

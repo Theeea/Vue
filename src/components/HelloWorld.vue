@@ -7,6 +7,7 @@ import VifCondition from "./VifCondition.vue";
 import ListRendering from "./ListRendering.vue";
 import EventListner from "./EventListner.vue";
 import FormBinding from "./FormBinding.vue";
+import ComponentsBasic from "./ComponentsBascis.vue";
 
 defineProps({
   msg: String
@@ -137,6 +138,10 @@ const classObject = computed(() => ({
   <FormBinding>
 
   </FormBinding>
+
+  <ComponentsBasic>
+
+  </ComponentsBasic>
 </template>
 
 <style scoped>

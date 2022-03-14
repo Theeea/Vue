@@ -57,6 +57,9 @@ const author = ref([
 const isPublished = computed({
   get: () => author.value[0].books.length > 0 ? '있음' : '없음',
 })
+// const publishedBooksMessage = computed(() => {
+//   return author.books.length > 0 ? 'Yes' : 'No'
+// })
 
 const isActive = ref(true)
 const test = ref(true)

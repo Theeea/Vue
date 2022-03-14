@@ -72,9 +72,23 @@ const state = reactive({ count: 0 })
 function increment() {
   state.count++
 }
+
+const obj = reactive({
+  nested: { count: 0 },
+  arr: ['foo', 'bar']
+})
+
+function mutateDeeply() {
+  // these will work as expected.
+  obj.nested.count++
+  obj.arr.push('baz')
+}
 </script>
 
 <template>
+  <button @click="mutateDeeply">
+    {{ obj.nested.count }}
+  </button>
   <button @click="increment">
     {{ state.count }}
   </button>

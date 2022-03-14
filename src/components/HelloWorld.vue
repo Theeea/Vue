@@ -64,9 +64,20 @@ const error = ref(null)
 const classObject = computed(() => ({
   active: isActive.value, test: test.value, 'text-danger': error.value
 }))
+
+import { reactive } from 'vue'
+
+const state = reactive({ count: 0 })
+
+function increment() {
+  state.count++
+}
 </script>
 
 <template>
+  <button @click="increment">
+    {{ state.count }}
+  </button>
   <div id="counter">
     Counter: {{ counter }}
   </div>

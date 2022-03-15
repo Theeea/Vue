@@ -8,6 +8,7 @@ import ListRendering from "./ListRendering.vue";
 import EventListner from "./EventListner.vue";
 import FormBinding from "./FormBinding.vue";
 import ComponentsBasic from "./ComponentsBascis.vue";
+import BlogPost from './BlogPost.vue';
 
 defineProps({
   msg: String
@@ -86,6 +87,12 @@ function mutateDeeply() {
   obj.nested.count++
   obj.arr.push('baz')
 }
+
+const posts = ref([
+  { id: 1, title: 'My journey with Vue' },
+  { id: 2, title: 'Blogging with Vue' },
+  { id: 3, title: 'Why Vue is so fun' }
+])
 </script>
 
 <template>
@@ -170,6 +177,12 @@ function mutateDeeply() {
   <ComponentsBasic>
 
   </ComponentsBasic>
+
+  <BlogPost
+      v-for="post in posts"
+      :id="post.id"
+      :title="post.title">
+  </BlogPost>
 </template>
 
 <style scoped>

@@ -13,6 +13,8 @@ const contents = ref([
 <template>
   <h4>
     {{id}}: {{ title }}
+    <button @click="$emit('enlarge-text')">글씨 크게</button>
+    <button @click="$emit('reduce-text')">글씨 작게</button>
   </h4>
   <Comp v-for="content in contents"
         :content=content.content>

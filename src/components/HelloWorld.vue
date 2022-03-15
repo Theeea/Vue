@@ -93,6 +93,8 @@ const posts = ref([
   { id: 2, title: 'Blogging with Vue' },
   { id: 3, title: 'Why Vue is so fun' }
 ])
+
+const postFontSize = ref(1)
 </script>
 
 <template>
@@ -178,11 +180,15 @@ const posts = ref([
 
   </ComponentsBasic>
 
-  <BlogPost
-      v-for="post in posts"
-      :id="post.id"
-      :title="post.title">
-  </BlogPost>
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <BlogPost
+        v-for="post in posts"
+        :id="post.id"
+        :title="post.title"
+        @enlarge-text="postFontSize += 0.1"
+        @reduce-text="postFontSize -= 0.1">
+    </BlogPost>
+  </div>
 </template>
 
 <style scoped>

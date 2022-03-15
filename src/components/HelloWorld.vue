@@ -9,6 +9,7 @@ import EventListner from "./EventListner.vue";
 import FormBinding from "./FormBinding.vue";
 import ComponentsBasic from "./ComponentsBascis.vue";
 import BlogPost from './BlogPost.vue';
+import DynamicComponent from './DynamicComponent.vue';
 
 defineProps({
   msg: String
@@ -189,6 +190,10 @@ const postFontSize = ref(1)
         @reduce-text="postFontSize -= 0.1">
     </BlogPost>
   </div>
+
+  <DynamicComponent>
+
+  </DynamicComponent>
 </template>
 
 <style scoped>
